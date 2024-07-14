@@ -17,7 +17,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
     }
     .container {
       background-color: #1f2937;
@@ -97,7 +97,7 @@
     }
     .skills, .projects {
       display: none;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       justify-items: center;
       align-items: center;
       padding: 20px;
@@ -163,6 +163,9 @@
       }
       .buttons .animation {
         height: 1px;
+      }
+      .skills, .projects {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -257,13 +260,6 @@
       document.querySelector('.animation').style.left = '0%';
     });
 
-    document.getElementById('project-button').addEventListener('click', function() {
-      document.getElementById('projects-section').classList.add('active');
-      document.getElementById('skills-section').classList.remove('active');
-      this.classList.add('active');
-      document.getElementById('skill-button').classList.remove('active');
-      document.querySelector('.animation').style.left = '50%';
-    });
-  </script>
+ </script>
 </body>
 </html>
