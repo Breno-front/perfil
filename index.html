@@ -11,20 +11,21 @@
       font-family: 'Lato', sans-serif;
       background-color: #111827;
       color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      padding: 0 10px; /* Adiciona padding para evitar corte nas laterais */
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
     .container {
       background-color: #1f2937;
       border: 0.5px solid #ffffff;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      max-width: 100%;
-      width: 450px;
+      width: 90%;
+      max-width: 450px;
       padding: 20px;
       text-align: center;
       animation: fadein 900ms ease forwards;
@@ -96,7 +97,7 @@
     }
     .skills, .projects {
       display: none;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       justify-items: center;
       align-items: center;
       padding: 20px;
@@ -155,17 +156,7 @@
     .spring:hover {
       background-color: #6DB33F;
     }
-
     @media (max-width: 600px) {
-      .skills, .projects {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 400px) {
-      .skills, .projects {
-        grid-template-columns: 1fr;
-      }
       .buttons button {
         padding: 5px 10px;
         font-size: 0.9em;
