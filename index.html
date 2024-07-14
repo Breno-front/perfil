@@ -16,16 +16,15 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      padding: 0 20px;
-      box-sizing: border-box;
+      padding: 0 10px; /* Adiciona padding para evitar corte nas laterais */
     }
     .container {
       background-color: #1f2937;
       border: 0.5px solid #ffffff;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 450px;
+      max-width: 100%;
+      width: 450px;
       padding: 20px;
       text-align: center;
       animation: fadein 900ms ease forwards;
@@ -54,7 +53,7 @@
       margin-bottom: 20px;
     }
     .social-links a i {
-      font-size: 24px; /* Ajuste o tamanho conforme necessário */
+      font-size: 24px;
     }
     .social-links a {
       margin: 0 10px;
@@ -157,21 +156,22 @@
       background-color: #6DB33F;
     }
 
-    /* Media Queries */
     @media (max-width: 600px) {
-      .buttons {
-        flex-direction: column;
-      }
-      .buttons button {
-        margin: 5px 0;
-      }
       .skills, .projects {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
     @media (max-width: 400px) {
       .skills, .projects {
         grid-template-columns: 1fr;
+      }
+      .buttons button {
+        padding: 5px 10px;
+        font-size: 0.9em;
+      }
+      .buttons .animation {
+        height: 1px;
       }
     }
   </style>
@@ -263,12 +263,12 @@
       document.getElementById('projects-section').classList.remove('active');
       this.classList.add('active');
       document.getElementById('project-button').classList.remove('active');
-      document.querySelector('.animation').style.left = '0';
+      document.querySelector('.animation').style.left = '0%';
     });
 
     document.getElementById('project-button').addEventListener('click', function() {
-      document.getElementById('skills-section').classList.remove('active');
       document.getElementById('projects-section').classList.add('active');
+      document.getElementById('skills-section').classList.remove('active');
       this.classList.add('active');
       document.getElementById('skill-button').classList.remove('active');
       document.querySelector('.animation').style.left = '50%';
