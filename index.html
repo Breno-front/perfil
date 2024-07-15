@@ -260,6 +260,13 @@
       document.querySelector('.animation').style.left = '0%';
     });
 
- </script>
+    document.getElementById('project-button').addEventListener('click', function() {
+      document.getElementById('projects-section').classList.add('active');
+      document.getElementById('skills-section').classList.remove('active');
+      this.classList.add('active');
+      document.getElementById('skill-button').classList.remove('active');
+      document.querySelector('.animation').style.left = '50%';
+    });
+  </script>
 </body>
 </html>
